@@ -2,7 +2,7 @@
 <plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="com.red_folder.phonegap.plugin.backgroundservice"
-        version="3.3">
+        version="0.1">
 
     <name>Background Service Plugin - Core logic</name>
 
@@ -17,7 +17,6 @@
     </engines>
 
     <js-module src="www/backgroundservice.js" name="BackgroundService">
-        <clobbers target="window.plugins.BackgroundServices" />
     </js-module>
     
     <!-- android -->
