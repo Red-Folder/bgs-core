@@ -20,7 +20,6 @@
     </js-module>
     
     <!-- android -->
-	<!--
     <platform name="android">
 
         <config-file target="res/xml/config.xml" parent="/*">
@@ -44,8 +43,9 @@
             
         </config-file>
         
+		<!--
         <source-file src="src/android/*" target-dir="src/com/red_folder/phonegap/plugin/backgroundservice" />
         <source-file src="aidl/android/*" target-dir="aidl/com/red_folder/phonegap/plugin/backgroundservice" />
+		-->
     </platform>
-	-->
 </plugin>
