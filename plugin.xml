@@ -44,7 +44,11 @@
         </config-file>
         
 		
-        <source-file src="src/android/*" target-dir="src/com/red_folder/phonegap/plugin/backgroundservice" />
+        <source-file src="src/android/BackgroundService.java" target-dir="src/com/red_folder/phonegap/plugin/backgroundservice" />
+        <source-file src="src/android/BackgroundServicePlugin.java" target-dir="src/com/red_folder/phonegap/plugin/backgroundservice" />
+        <source-file src="src/android/BackgroundServicePluginLogic.java" target-dir="src/com/red_folder/phonegap/plugin/backgroundservice" />
+        <source-file src="src/android/BootReceiver.java" target-dir="src/com/red_folder/phonegap/plugin/backgroundservice" />
+        <source-file src="src/android/PropertyHelper.java" target-dir="src/com/red_folder/phonegap/plugin/backgroundservice" />
 		<!--
         <source-file src="aidl/android/*" target-dir="aidl/com/red_folder/phonegap/plugin/backgroundservice" />
 		-->
