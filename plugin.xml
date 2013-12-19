@@ -15,12 +15,12 @@
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
     </engines>
-
-    <js-module src="www/backgroundservice.js" name="BackgroundService">
-    </js-module>
     
     <!-- android -->
     <platform name="android">
+
+	    <js-module src="www/backgroundservice.js" name="BackgroundService">
+		</js-module>
 
         <config-file target="res/xml/config.xml" parent="/*">
             <feature name="BackgroundServicePlugin">
