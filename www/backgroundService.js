@@ -14,10 +14,12 @@
  * limitations under the License.
  */
 
-/*
- * Constructor
- */
-function CreateBackgroundService(serviceName) {
+ /*
+  * Declare a factory class which is used to create the background service "wrapper"
+  */
+function BackgroundServiceFactory() { }
+
+BackgroundServiceFactory.prototype.create = function (serviceName) {
 	var exec = require("cordova/exec");
 	
 	var BackgroundService = function (serviceName) {
@@ -26,11 +28,6 @@ function CreateBackgroundService(serviceName) {
 			return ServiceName;
 		};
 	};
-
-	var BackgroundServiceError = function (code, message) {
-		this.code = code || null;
-		this.message = message || null;
-	};	
 
 	/**
 	  * All methods attempt to return the following data in both the success and failure callbacks
@@ -221,5 +218,7 @@ function CreateBackgroundService(serviceName) {
 	};
 
 	var backgroundService = new BackgroundService(serviceName);
-	module.exports = backgroundService;
+	return backgroundService;
 }; 
+
+module.exports = new BackgroundServiceFactory();
