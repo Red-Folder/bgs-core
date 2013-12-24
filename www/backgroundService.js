@@ -17,7 +17,7 @@
 /*
  * Constructor
  */
-function CreateBackgroundService(serviceName, require, exports, module) {
+function CreateBackgroundService(serviceName) {
 	var exec = require("cordova/exec");
 	
 	var BackgroundService = function (serviceName) {
