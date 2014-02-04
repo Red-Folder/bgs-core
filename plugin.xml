@@ -10,7 +10,7 @@
         Framework code that allows the development and operation of an Android Background Service.
     </description>
 
-    <license>Apache 2.0 License</license>
+    <license>Apache 2.0</license>
 
     <engines>
         <engine name="cordova" version=">=3.0.0"/>
