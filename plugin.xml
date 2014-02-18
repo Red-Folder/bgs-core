@@ -19,7 +19,7 @@
     <!-- android -->
     <platform name="android">
 
-	    <js-module src="www/backgroundservice.js" name="BackgroundService">
+	    <js-module src="www/backgroundService.js" name="BackgroundService">
 		</js-module>
 
         <config-file target="res/xml/config.xml" parent="/*">
