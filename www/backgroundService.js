@@ -23,7 +23,7 @@ BackgroundServiceFactory.prototype.create = function (serviceName) {
 	var exec = require("cordova/exec");
 	
 	var BackgroundService = function (serviceName) {
-		var ServiceName = serviceName
+		var ServiceName = serviceName;
 		this.getServiceName = function() {
 			return ServiceName;
 		};
