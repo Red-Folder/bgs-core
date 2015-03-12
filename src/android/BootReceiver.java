@@ -20,7 +20,11 @@ public class BootReceiver extends BroadcastReceiver {
 		if (serviceList != null) {
 			for (int i = 0; i < serviceList.length; i++)
 			{
-				Intent serviceIntent = new Intent(serviceList[i]);         
+				// Fix to https://github.com/Red-Folder/bgs-core/issues/18
+				// Gets the class from string
+				Class<?> serviceClass = ReflectionHelper.LoadClass(serviceList[i]);
+
+				Intent serviceIntent = new Intent(context, serviceClass);         
 				context.startService(serviceIntent);
 			}
 		}

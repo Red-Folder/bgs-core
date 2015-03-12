@@ -598,7 +598,10 @@ public class BackgroundServicePluginLogic {
 			Log.d(LOCALTAG, "Starting bindToService");
 			
 			try {
-				this.mService = new Intent(this.mServiceName);
+				// Fix to https://github.com/Red-Folder/bgs-core/issues/18
+				// Gets the class from string
+				Class<?> serviceClass = ReflectionHelper.LoadClass(this.mServiceName);
+				this.mService = new Intent(this.mContext, serviceClass);
 
 				Log.d(LOCALTAG, "Attempting to start service");
 				this.mContext.startService(this.mService);
