@@ -118,48 +118,23 @@ public abstract class BackgroundService extends Service {
 		return apiEndpoint;
 	}     
 	
-	@Override  
-	public void onCreate() {     
-		super.onCreate();     
-		Log.i(TAG, "Service creating");
-
-		// Duplicating the call to initialiseService across onCreate and onStart
-		// Done this to ensure that my initialisation code is called.
-		// Found that the onStart was not called if Android was re-starting the service if killed
-		initialiseService();
-	}
-
 	@Override
-	public void onStart(Intent intent, int startId) {
-		Log.i(TAG, "Service started");       
+	public int onStartCommand(Intent intent, int flags, int startId) {
+	    super.onStartCommand(intent, flags, startId);
+	    Log.d(TAG, "onStartCommand run");
 
-		// Duplicating the call to initialiseService across onCreate and onStart
-		// Done this to ensure that my initialisation code is called.
-		// Found that the onStart was not called if Android was re-starting the service if killed
-		initialiseService();
+	    initialiseService();
+	    return START_STICKY;  
 	}
-	
+
 	@Override  
 	public void onDestroy() {     
 		super.onDestroy();     
 		Log.i(TAG, "Service destroying");
 		
-		Log.i(TAG, "Stopping timer task");
-		stopTimerTask();
-
-		Log.i(TAG, "Removing the timer");
-		if (this.mTimer != null) {
-			Log.i(TAG, "Timer is not null");
-			try {
-				this.mTimer.cancel();     
-				Log.i(TAG, "Timer.cancel has been called");
-				this.mTimer = null;
-			} catch (Exception ex) {
-				Log.i(TAG, "Exception has occurred - " + ex.getMessage());
-			}
-		}
+		cleanupService();
 	}
-
+	
 	/*
 	 ************************************************************************************************
 	 * Protected methods 
@@ -305,6 +280,26 @@ public abstract class BackgroundService extends Service {
 				this.setupTimerTask();
 			
 			this.mServiceInitialised = true;
+		}
+
+	}
+	
+	private void cleanupService() {
+		Log.i(TAG, "Running cleanupService");
+		
+		Log.i(TAG, "Stopping timer task");
+		stopTimerTask();
+
+		Log.i(TAG, "Removing the timer");
+		if (this.mTimer != null) {
+			Log.i(TAG, "Timer is not null");
+			try {
+				this.mTimer.cancel();     
+				Log.i(TAG, "Timer.cancel has been called");
+				this.mTimer = null;
+			} catch (Exception ex) {
+				Log.i(TAG, "Exception has occurred - " + ex.getMessage());
+			}
 		}
 
 	}
