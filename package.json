@@ -1,0 +1,21 @@
+{
+  "name": "bgs-core",
+  "version": "1.0.0",
+  "cordova": {
+    "id": "cordova-plugin-bgscore",
+    "platforms": [
+      "android"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pebblecode/bgs-core.git"
+  },
+  "engines": [
+    {
+      "name": "cordova",
+      "version": ">=3.0.0"
+    }
+  ],
+  "author": "Red Folder"
+}
