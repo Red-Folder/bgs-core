@@ -1,6 +1,6 @@
 {
   "name": "bgs-core",
-  "version": "1.1.0",
+  "version": "1.1.1",
   "cordova": {
     "id": "cordova-plugin-bgscore",
     "platforms": [
