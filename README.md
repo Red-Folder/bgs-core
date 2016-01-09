@@ -1,3 +1,12 @@
+# Important Notice
+Please be aware that I'm struggling to maintain this plugin.  Even after considerable effort, I have been unable to produce a reliable development environment.
+
+While I will work to rectify this, neither Android or Cordova/ Phonegap development represent a priority to me.  Neither present me with paid income or particularly excite me enough to put aside other projects.
+
+I will make attempts to be more active in responding to questions – and apologies for any previous delays.
+
+Please keep the above in mind before actively using this plugin.
+
 # Background Service Plugin Core (bgs-core)
 
 ## Quick summary
