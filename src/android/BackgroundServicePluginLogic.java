@@ -161,6 +161,12 @@ public class BackgroundServicePluginLogic {
 					(data.getString(0).length() > 0)) {
 
 				String serviceName = data.getString(0);
+				String serviceClassName = serviceName;
+				String[] serviceNameTokens = serviceName.split("`");
+				if(serviceNameTokens.length > 1) {
+					serviceClassName = serviceNameTokens[0];
+					serviceName = serviceNameTokens[1];
+				}
 				
 				Log.d(TAG, "Finding servicename " + serviceName);
 				
@@ -173,7 +179,7 @@ public class BackgroundServicePluginLogic {
 					service = this.mServices.get(serviceName);
 				} else {
 					Log.d(TAG, "Creating new Service Details");
-					service = new ServiceDetails(this.mContext, serviceName);
+					service = new ServiceDetails(this.mContext, serviceClassName);
 					this.mServices.put(serviceName, service);
 				}
 
