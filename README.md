@@ -1,9 +1,9 @@
 # Important Notice
-Please be aware that I'm struggling to maintain this plugin.  Even after considerable effort, I have been unable to produce a reliable development environment.
+Please be aware that I'm no longer actively maintaining this plugin.
 
-While I will work to rectify this, neither Android or Cordova/ Phonegap development represent a priority to me.  Neither present me with paid income or particularly excite me enough to put aside other projects.
+I believe the problem it solved is now better handled with PWA technologies like Service Worker and Push Notifications.
 
-I will make attempts to be more active in responding to questions – and apologies for any previous delays.
+I would also consider technologies such as Phonegap & Cordova to largely to have been eclipsed by PWAs.
 
 Please keep the above in mind before actively using this plugin.
 
